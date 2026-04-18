@@ -1,0 +1,5 @@
+app_id: da_Ko6IotJUyJY6
+kind: wasmer.io/App.v0
+name: php-student-database
+owner: heatherjholt
+package: sha256:3809b999b0219b44c962ca6a95eb77a40cc835eb53af251d990f0150926950f2

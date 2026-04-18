@@ -3,6 +3,8 @@
 ## Overview
 This project is a dynamic PHP web application connected to a MySQL database for managing student records. It features a modern, clean "Control Panel" interface where users can view, insert, update, and delete student data.
 
+[Live Demo]()
+
 ## Features
 - **View Records:** Display all students, filter by gender, find students older than 21, or find students missing phone numbers.
 - **Analytics:** Count distinct majors among the student body.
