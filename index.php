@@ -26,18 +26,33 @@
 
 <div class="results-area">
         <?php
-        $servername = getenv('DB_HOST');
-        $username = getenv('DB_USERNAME');
-        $password = getenv('DB_PASSWORD');
-        $database = getenv('DB_NAME');
-        $port = getenv('DB_PORT');
+        // $servername = getenv('DB_HOST');
+        // $username = getenv('DB_USERNAME');
+        // $password = getenv('DB_PASSWORD');
+        // $database = getenv('DB_NAME');
+        // $port = getenv('DB_PORT');
+
+        // $conn = new mysqli($servername, $username, $password, $database, $port);
+
+        // if ($conn->connect_error) {
+        //     die("Connection failed: " . $conn->connect_error);
+        // }
+        $servername = $_SERVER['DB_HOST'] ?? getenv('DB_HOST');
+        $username = $_SERVER['DB_USERNAME'] ?? getenv('DB_USERNAME');
+        $password = $_SERVER['DB_PASSWORD'] ?? getenv('DB_PASSWORD');
+        $database = $_SERVER['DB_NAME'] ?? getenv('DB_NAME');
+        
+        $port = (int)($_SERVER['DB_PORT'] ?? getenv('DB_PORT'));
+
+        if (empty($servername)) {
+            die("<h2>Error: Secrets are not loading. Servername is empty.</h2>");
+        }
 
         $conn = new mysqli($servername, $username, $password, $database, $port);
 
         if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
+            die("<h2>Connection failed: " . $conn->connect_error . "</h2>");
         }
-
         function displayTable($result) {
             if ($result && $result->num_rows > 0) {
                 echo "<table>";
