@@ -25,10 +25,7 @@
     </div>
 
 <div class="results-area">
-        // include 'db_config.php'; 
-
-        // $conn = new mysqli($servername, $username, $password, $database, $port);
-        <?php
+    <?php
     $servername = getenv('DB_HOST');
     $username = getenv('DB_USERNAME');
     $password = getenv('DB_PASSWORD');
