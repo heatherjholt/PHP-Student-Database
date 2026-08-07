@@ -39,8 +39,7 @@
         // }
         include 'db_config.php'; 
 
-        $conn = new mysqli($servername, $username, $password, $database);
-
+        $conn = new mysqli($servername, $username, $password, $database, $port);
         if ($conn->connect_error) {
             die("<h2>Connection failed: " . $conn->connect_error . "</h2>");
         }
