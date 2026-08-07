@@ -25,7 +25,6 @@
     </div>
 
 <div class="results-area">
-        <?php
         // include 'db_config.php'; 
 
         // $conn = new mysqli($servername, $username, $password, $database, $port);
