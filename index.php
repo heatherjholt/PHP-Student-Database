@@ -26,20 +26,17 @@
 
 <div class="results-area">
         <?php
-        // $servername = getenv('DB_HOST');
-        // $username = getenv('DB_USERNAME');
-        // $password = getenv('DB_PASSWORD');
-        // $database = getenv('DB_NAME');
-        // $port = getenv('DB_PORT');
+        // include 'db_config.php'; 
 
         // $conn = new mysqli($servername, $username, $password, $database, $port);
+        <?php
+    $servername = getenv('DB_HOST');
+    $username = getenv('DB_USERNAME');
+    $password = getenv('DB_PASSWORD');
+    $database = getenv('DB_NAME');
+    $port = getenv('DB_PORT');
 
-        // if ($conn->connect_error) {
-        //     die("Connection failed: " . $conn->connect_error);
-        // }
-        include 'db_config.php'; 
-
-        $conn = new mysqli($servername, $username, $password, $database, $port);
+    $conn = new mysqli($servername, $username, $password, $database, $port);
         if ($conn->connect_error) {
             die("<h2>Connection failed: " . $conn->connect_error . "</h2>");
         }
